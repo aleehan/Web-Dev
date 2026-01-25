@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Project: Event invite</title>
+  <style>
+    /* This is where the magic happens! */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f172a; /* Dark slate background */
+      color: #f8fafc;
+      display: flex;
+      justify-content: center;
+      padding: 50px;
+    }
+
+    .invite-card {
+      background-color: #1e293b;
+      border: 2px solid #38bdf8;
+      border-radius: 15px;
+      padding: 40px;
+      max-width: 400px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #38bdf8;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-weight: 300;
+      margin-top: 0;
+      color: #94a3b8;
+    }
+
+    .details-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin: 25px 0;
+    }
+
+    .details-list li {
+      margin-bottom: 10px;
+      font-size: 1.1em;
+    }
+
+    .rsvp-button {
+      background-color: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .rsvp-button:hover {
+      background-color: #7dd3fc;
+    }
+  </style>
+</head>
+<body>
+
+<div class="invite-card">
+  <h1>You're invited!</h1>
+  <h2>To the Retro Synth Party</h2>
+
+  <p>The details:</p>
+  <ul class="details-list">
+    <li>📅 <strong>Date:</strong> October 31st, 2026</li>
+    <li>⏰ <strong>Time:</strong> 8:00 PM - Late</li>
+    <li>📍 <strong>Location:</strong> The Pixel Lounge</li>
+    <li>🕹️ <strong>Theme:</strong> 80s Cyberpunk</li>
+  </ul>
+
+  <button class="rsvp-button">RSVP Now</button>
+</div>
+
+</body>
+</html>

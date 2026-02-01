@@ -1,0 +1,433 @@
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('./fonts/Segoe UI.woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/**
+  Нормализация блочной модели
+ */
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+/**
+  Убираем внутренние отступы слева тегам списков,
+  у которых есть атрибут class
+ */
+:where(ul, ol):where([class]) {
+    padding-left: 0;
+}
+
+/**
+  Убираем внешние отступы body и двум другим тегам,
+  у которых есть атрибут class
+ */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+    margin: 0;
+}
+
+/**
+  Убираем внешние отступы вертикали нужным тегам,
+  у которых есть атрибут class
+ */
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  ol,
+  dl
+):where([class]) {
+    margin-block: 0;
+}
+
+:where(dd[class]) {
+    margin-left: 0;
+}
+
+:where(fieldset[class]) {
+    padding: 0;
+    border: none;
+}
+
+/**
+  Убираем стандартный маркер маркированному списку,
+  у которого есть атрибут class
+ */
+:where(ul[class]) {
+    list-style: none;
+}
+
+:where(address[class]) {
+    font-style: normal;
+}
+
+/**
+  Обнуляем вертикальные внешние отступы параграфа,
+  объявляем локальную переменную для внешнего отступа вниз,
+  чтобы избежать взаимодействие с более сложным селектором
+ */
+p {
+    --paragraphMarginBottom: 24px;
+
+    margin-block: 0;
+}
+
+/**
+  Внешний отступ вниз для параграфа без атрибута class,
+  который расположен не последним среди своих соседних элементов
+ */
+p:where(:not([class]):not(:last-child)) {
+    margin-bottom: var(--paragraphMarginBottom);
+}
+
+
+/**
+  Упрощаем работу с изображениями и видео
+ */
+img,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/**
+  Наследуем свойства шрифт для полей ввода
+ */
+input,
+textarea,
+select,
+button {
+    font: inherit;
+}
+
+html {
+    /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+    height: 100%;
+    /**
+      Убираем скачок интерфейса по горизонтали
+      при появлении / исчезновении скроллбара
+     */
+    scrollbar-gutter: stable;
+    /**
+      Плавный скролл
+     */
+    scroll-behavior: smooth;
+}
+
+body {
+    /**
+      Пригодится в большинстве ситуаций
+      (когда, например, нужно будет "прижать" футер к низу сайта)
+     */
+    min-height: 100%;
+    /**
+      Унифицированный интерлиньяж
+     */
+    line-height: 1.5;
+}
+
+/**
+  Нормализация высоты элемента ссылки при его инспектировании в DevTools
+ */
+a:where([class]) {
+    display: inline-flex;
+}
+
+/**
+  Курсор-рука при наведении на элемент
+ */
+button,
+label {
+    cursor: pointer;
+}
+
+/**
+  Убирает серую подсветку при тапе на мобильных устройствах (iOS/Android)
+ */
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут fill со значением 'none' или начинается с 'url')
+ */
+:where([fill]:not(
+  [fill="none"],
+  [fill^="url"]
+)) {
+    fill: currentColor;
+}
+
+/**
+  Приводим к единому цвету svg-элементы
+  (за исключением тех, у которых уже указан
+  атрибут stroke со значением 'none')
+ */
+:where([stroke]:not(
+  [stroke="none"],
+  [stroke^="url"]
+)) {
+    stroke: currentColor;
+}
+
+/**
+  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+ */
+svg * {
+    transition-property: fill, stroke;
+}
+
+/**
+  Приведение рамок таблиц в классический 'collapse' вид
+ */
+:where(table) {
+    border-collapse: collapse;
+    border-color: currentColor;
+}
+
+/**
+  Удаляем все анимации и переходы для людей,
+  которые предпочитают их не использовать
+ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%); /* Modern approach */
+    clip: rect(0 0 0 0); /* Fallback for older browsers */
+    overflow: hidden;
+}
+
+:root {
+    --color-black: #0A1014;
+    --color-white: #f5f5f5;
+    --color-dark-blue: #3c4acd;
+    --color-light-blue: #0095f6;
+    --color-gray: #a8a8a8;
+    --color-gray-input: #25292e;
+
+    --font-family-base: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+
+    --container-width: 935px;
+    --container-padding-x: 15px;
+}
+
+.container {
+    max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+    margin-inline: auto;
+    padding-inline: var(--container-padding-x);
+    padding-top: 60px;
+}
+
+body {
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    background-color: var(--color-black);
+}
+
+a {
+    text-decoration: none;
+}
+
+.input {
+    font-size: 12px;
+    width: 80%;
+    height: 40px;
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    padding: 14px;
+    background-color: var(--color-gray-input);
+}
+
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 70px;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+    margin-left: -5px;
+}
+
+.login-logo {
+    color: var(--color-white);
+}
+
+.input::placeholder {
+    color: var(--color-gray);
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 340px;
+    row-gap: 6px;
+    margin-top: -32px;
+}
+
+.login-form-button {
+    color: var(--color-white);
+    width: 79%;
+    border: none;
+    border-radius: 7px;
+    margin-top: 8px;
+    padding: 6px;
+    background-color: var(--color-dark-blue);
+}
+
+.separator {
+    width: 108px;
+    height: 1px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+}
+
+.login-form-separator {
+    display: flex;
+    column-gap: 16px;
+    margin-block: 10px;
+}
+
+.login-form-separator-text {
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+.login-form-with-facebook {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-light-blue);
+    border: none;
+    column-gap: 5px;
+    margin-block: 8px;
+    background-color: var(--color-black);
+}
+
+.login-form-with-facebook-logo {
+    display: flex;
+    align-items: center;
+}
+
+a.login-form-forgot-password {
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+a.login-form-forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-sign-up {
+    color: var(--color-white);
+    margin-top: 50px;
+}
+
+a.login-sign-up-link {
+    color: var(--color-dark-blue);
+    font-weight: bold;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 15px;
+    margin-top: 20px;
+    max-width: 70%;
+}
+
+.footer-links-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: 17px;
+}
+
+.footer-links-list-item a {
+    color: var(--color-gray);
+}
+
+.footer-links-list-item a:hover {
+    text-decoration: underline;
+}
+
+.footer-copyright {
+    color: var(--color-gray);
+}
+
+.language {
+    color: var(--color-gray);
+    max-width: 58px;
+    margin-right: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+.language:focus {
+    outline: none;
+}
+
+@media (max-width: 900px) {
+    .login-picture {
+        display: none;
+    }
+
+    .footer {
+        max-width: 100%;
+        padding-bottom: 52px;
+    }
+
+    .footer-links-list {
+        row-gap: 7px;
+    }
+}
+
+
+
+
+

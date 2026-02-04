@@ -666,6 +666,9 @@ summary {
 }
 
 .add-ons-card {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
     border: none;
     border-radius: 8px;
     padding: 32px;
@@ -710,6 +713,47 @@ summary {
     background-color: #ffdbf2;
 }
 
+.add-ons-card-icon.icon-green {
+    fill: #138000;
+}
+
+.add-ons-card-icon.icon-green::before {
+    background-color: #c7ffc8;
+}
+
+.add-ons-card-icon.icon-blue {
+    fill: #008bff;
+}
+
+.add-ons-card-icon.icon-blue::before {
+    background-color: #c7e8ff;
+}
+
+.add-ons-card-icon.icon-pink {
+    fill: #c300b8;
+}
+
+.add-ons-card-icon.icon-pink::before {
+    background-color: #fbe2ff;
+}
+
+.add-ons-card-icon.icon-orange {
+    fill: #c36200;
+}
+
+.add-ons-card-icon.icon-orange::before {
+    background-color: #fff1e2;
+}
+
+.add-ons-card-icon.icon-yellow {
+    fill: #a39700;
+}
+
+.add-ons-card-icon.icon-yellow::before {
+    background-color: #fff6ce;
+}
+
+
 .add-ons-card-name {
     font-weight: 600;
     margin-bottom: 20px;
@@ -732,4 +776,37 @@ summary {
 
 .octicon {
     display: flex;
+}
+
+@media (max-width: 800px) {
+    .pricing-prices {
+        align-items: center;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+
+    .features {
+        display: none;
+    }
+
+    .add-ons-text {
+        font-size: 48px;
+    }
+
+    .add-ons-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .add-ons-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        margin-block: auto;
+    }
+
+    .add-ons-card-big-link {
+        display: flex;
+        flex-direction: column;
+        margin-block: auto;
+    }
 }

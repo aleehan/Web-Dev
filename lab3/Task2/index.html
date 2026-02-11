@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-Do</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="content container">
+  <section class="adding">
+    <h1 class="adding-title">My Tasks</h1>
+    <div class="adding-main">
+      <label for="task-input" class="visually-hidden">Task</label>
+      <input type="text" id="task-input" class="adding-input input" placeholder="Type your task here..">
+      <button class="adding-main-button button" id="adding-button" type="button">
+        Add
+      </button>
+    </div>
+  </section>
+  <section class="tasks">
+    <ul class="tasks-list" id="tasks-list">
+      <li class="tasks-list-item">
+        <div class="tasks-list-item-content">
+          <label class="tasks-list-item-content-label">
+            <input type="checkbox" class="tasks-list-item-content-checkbox">
+          </label>
+          <p class="tasks-list-item-content-name">Learn React</p>
+        </div>
+        <div class="tasks-list-item-functions">
+          <button class="tasks-list-item-functions-button" id="delete-button" type="button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </li>
+      <li class="tasks-list-item completed">
+        <div class="tasks-list-item-content">
+          <label class="tasks-list-item-content-label">
+            <input type="checkbox" class="tasks-list-item-content-checkbox">
+          </label>
+          <p class="tasks-list-item-content-name">Prototyping To-Do List</p>
+        </div>
+        <div class="tasks-list-item-functions">
+          <button class="tasks-list-item-functions-button" type="button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M3 6H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</main>
+<footer class="footer container">
+  <div class="footer-content">
+    <p class="footer-content-text">
+      ©<time datetime="2026">2026</time> to-do list by <strong>aleehan</strong>
+    </p>
+  </div>
+</footer>
+<script src="./script2.js"></script>
+</body>
+</html>

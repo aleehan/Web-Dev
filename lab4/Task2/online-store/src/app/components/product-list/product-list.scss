@@ -25,3 +25,15 @@ app-product-card {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+@media (max-width: 903px) {
+  .catalog {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 597px) {
+  .catalog {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,0 +1,28 @@
+<!--<p>product-card works!</p>-->
+
+<div class="product-card">
+  <div class="product-card__image">
+    <img [src]="product.image" [alt]="product.name">
+  </div>
+  <div class="product-card__title">
+      <div class="product-card__title__main">
+          <div class="product-card__title__main__name">{{product.name}}</div>
+          <div class="product-card__title__main__rating">
+              <app-rating-stars [product]="product"></app-rating-stars>
+<!--              <img src="assets/icons/stars.png" alt="rating">-->
+          </div>
+      </div>
+      <div class="product-card__title__not__main">
+          <div class="product-card__description">
+              {{product.description}}
+          </div>
+          <div class="product-card__price">{{product.price}}₸</div>
+          <div class="product-card__buttons">
+              <a [href]="product.link" target="_blank"><button class="product-card__buttons__open button" type="button">Open</button></a>
+              <button class="product-card__buttons__share button" type="button"
+              (click)="shareToTelegram()">
+                  Share</button>
+          </div>
+      </div>
+  </div>
+</div>

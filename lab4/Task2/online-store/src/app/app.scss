@@ -1,0 +1,13 @@
+:host, app-root {
+  width: 100%;
+}
+
+header {
+  display: block;
+  width: 100%;
+}
+
+app-product-list {
+  display: flex;
+  flex-wrap: wrap;
+}

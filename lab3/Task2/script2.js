@@ -3,9 +3,15 @@ const inputBox = document.getElementById("task-input");
 const addButton = document.getElementById("adding-button");
 
 const addTask = () => {
-    if (inputBox.value === "") {
+    let newTaskValue = inputBox.value;
+    
+    if (newTaskValue === "") {
         alert("Please enter a task");
+        return;
     }
+    
+    // const allTasks = listContainer.querySelectorAll('li');
+    
     else {
         let li = document.createElement("li")
         li.className = "tasks-list-item";
@@ -73,7 +79,7 @@ listContainer.addEventListener("click", (e) => {
         e.target.closest("li").remove();
         saveData();
     }
-});
+}); 
 
 const saveData = () => {
     localStorage.setItem("task", listContainer.innerHTML);

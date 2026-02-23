@@ -1,0 +1,119 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 263px;
+  height: 100%;
+  padding: 25px;
+  border-radius: 20px;
+  //box-shadow: 0px 0px 0px 1px #d1d9e0, 0px 56px 112px 0px #25292e52;
+  background-color: var(--color-white);
+}
+
+.product-card__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: auto;
+  height: 160px;
+  align-self: center;
+  padding-bottom: 30px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+  }
+}
+
+.product-card__image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  margin-top: 185px;
+  width: 200px;
+  height: 1px;
+  background-color: var(--color-light-gray);
+}
+
+.product-card__title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  //margin-top: auto;
+}
+
+.product-card__title__main {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.product-card__title__not__main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.product-card__title__main__name {
+  font-size: 13px;
+  min-width: 130px;
+  max-width: 130px;
+}
+
+.product-card__title__main__rating {
+  min-width: 80px;
+}
+
+.product-card__description {
+  font-size: 10px;
+  font-weight: 400;
+  margin-block:  6px;
+}
+
+.product-card__price {
+  font-size: 24px;
+  margin-bottom: 6px;
+  margin-top: auto;
+}
+
+.product-card__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  //margin-top: auto;
+}
+
+.button {
+  font-size: 16px;
+  padding: 8px 31px;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--color-light-gray);
+  transition-duration: 0.3s;
+}
+
+.product-card__buttons__open:hover {
+  background-color: #d5d5d5;
+}
+
+.product-card__buttons__share {
+  background-color: #9bff9b;
+}
+
+.product-card__buttons__share:hover {
+  background-color: #58da58;
+}
+
+app-rating-stars {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+}

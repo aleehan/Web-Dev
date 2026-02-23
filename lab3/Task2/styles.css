@@ -382,3 +382,7 @@ body {
     margin-top: 330px;
     padding-block: 50px;
 }
+
+.urgent {
+    background-color: red;
+}

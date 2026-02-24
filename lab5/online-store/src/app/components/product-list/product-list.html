@@ -1,0 +1,17 @@
+<main class="content container">
+  @if (products.length > 0) {
+    <section class="main">
+
+      <div class="catalog">
+        @for (product of products; track product.id) {
+          <app-product-card [product] = product (delete)="onProductDelete($event)"></app-product-card>
+        }
+      </div>
+    </section>
+  } @else {
+    <div class="empty-state">
+      <h3>This category is empty</h3>
+      <p>All the items were deleted</p>
+    </div>
+  }
+</main>

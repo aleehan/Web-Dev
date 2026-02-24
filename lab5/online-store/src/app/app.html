@@ -1,0 +1,30 @@
+<main class="content">
+  <app-header></app-header>
+
+  <nav class="category-nav container">
+    @for (category of categories; track category.id) {
+      <button (click)="selectCategory(category.id)"
+              [class.active] = "isSelected(category.id)"
+              class="category-nav__button">
+        {{category.name}}
+      </button>
+    }
+  </nav>
+
+  @if (selectedCategoryId === null) {
+    <app-product-list [products]="allProducts"></app-product-list>
+<!--    <div class="welcome-message">-->
+<!--      <h2 class="welcome-message__main">-->
+<!--        Welcome!-->
+<!--      </h2>-->
+<!--      <p class="welcome-message__title">-->
+<!--        Choose a category-->
+<!--      </p>-->
+<!--    </div>-->
+  } @else if (selectedCategoryId === 5) {
+    <app-product-list [products]="allProducts"></app-product-list>
+  }
+  @else {
+    <app-product-list [products]="selectedProducts"></app-product-list>
+  }
+</main>

@@ -1,0 +1,42 @@
+:host, app-root {
+  width: 100%;
+}
+
+header {
+  display: block;
+  width: 100%;
+}
+
+app-product-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.category-nav {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  column-gap: 10px;
+}
+
+.category-nav__button {
+  border: none;
+  transition-duration: 0.2s;
+  background-color: transparent;
+
+  &:hover {
+    border-radius: 10px;
+    background-color: var(--color-white);
+  }
+}
+
+.welcome-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 175px;
+}

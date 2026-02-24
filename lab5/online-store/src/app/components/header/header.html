@@ -1,0 +1,15 @@
+<header class="header">
+  <a href="#home" class="header-logo">aleehan</a>
+  <nav class="header-menu">
+    <ul class="header-list">
+      @for (item of menuItems; track item) {
+        <li class="header-list-item"
+            #navItem
+            (mouseenter)="moveLine(navItem)">
+          <a href="#{{item.toLowerCase()}}">{{ item }}</a>
+        </li>
+      }
+      <div class="header-underline" [style.width.px]="lineWidth" [style.left.px]="lineLeft"></div>
+    </ul>
+  </nav>
+</header>

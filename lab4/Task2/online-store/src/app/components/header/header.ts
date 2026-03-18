@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './header.scss',
 })
 export class Header {
-  menuItems = ['Home', 'Shop', 'Likes', 'About'];
+  menuItems = ['Home', 'Shop', 'Likes', 'About', 'List'];
 
   lineWidth = 0;
   lineLeft = 0;

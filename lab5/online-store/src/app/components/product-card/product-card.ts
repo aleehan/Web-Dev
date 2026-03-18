@@ -15,7 +15,12 @@ export class ProductCard {
   @Output() delete = new EventEmitter<number>();
 
   onLike() {
-    this.product.likes++;
+    if (this.product.likes == 0) {
+      this.product.likes++;
+    }
+    else {
+      this.product.likes--;
+    }
   }
 
   onDelete() {

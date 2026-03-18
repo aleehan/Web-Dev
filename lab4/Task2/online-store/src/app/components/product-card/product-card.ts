@@ -20,4 +20,6 @@ export class ProductCard {
 
     window.open(telegramUrl, '_blank');
   }
+
+
 }
